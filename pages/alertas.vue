@@ -1,3 +1,22 @@
+<script setup>
+// import { mapGetters } from "vuex";
+//   export default {
+//     components: {
+//     },
+//     async asyncData({ $axios }) {
+//       const AlertData = await $axios.$get("/api/main/alert/");
+//       return { AlertData };
+//     },
+//     computed: {
+//     ...mapGetters(["isAuthenticated", "loggedInUser", "IsPremium"]),
+//     },
+//     methods: {
+//       Go(){
+//         this.$router.push({ path: "/" })
+//       }
+//     },
+//   }
+</script>
 <template>
   <div>
     <Header/>
@@ -128,27 +147,6 @@
     <Footer/>
   </div>
 </template>
-
-<script>
-import { mapGetters } from "vuex";
-  export default {
-    components: {
-    },
-    async asyncData({ $axios }) {
-      const AlertData = await $axios.$get("/api/main/alert/");
-      return { AlertData };
-    },
-    computed: {
-    ...mapGetters(["isAuthenticated", "loggedInUser", "IsPremium"]),
-    },
-    methods: {
-      Go(){
-        this.$router.push({ path: "/" })
-      }
-    },
-  }
-</script>
-
 <style lang="scss" scoped>
   // .blue {
   //   color: #1C496B;

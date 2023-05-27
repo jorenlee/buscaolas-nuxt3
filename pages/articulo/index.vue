@@ -1,3 +1,36 @@
+<script setup>
+  // export default {
+  //   async asyncData({ $axios }) {
+  //     const ArticuloData = await $axios.$get("api/main/articulos/");
+  //     const CategoryData = await $axios.$get('/api/main/article/category/')
+  //     return { ArticuloData, CategoryData};
+  //   },
+  //   data (){
+  //     return {
+  //       filterBy: ''
+  //     }
+  //   },
+  //   computed: {
+  //     filterNews(){
+  //       return this.ArticuloData.results.filter((list) => {
+  //         return list.category.categoria_nm.match(this.filterBy)
+  //       });
+  //     }
+  //   },
+  //   methods: {
+  //     async LoadMore(){
+  //       if (this.ArticuloData.next) {
+  //         var url =this.ArticuloData.next.substr(this.ArticuloData.next.indexOf('/', 7) + 1)
+  //         let response = await this.$axios.$get(url)
+  //         this.ArticuloData.next = response.next
+  //         for ( const i in response.results) {
+  //           this.ArticuloData.results.push(response.results[i])
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
+</script>
 <template>
   <div>
     <Header/>
@@ -66,41 +99,6 @@
     <Footer/>
   </div>
 </template>
-
-<script>
-  export default {
-    async asyncData({ $axios }) {
-      const ArticuloData = await $axios.$get("api/main/articulos/");
-      const CategoryData = await $axios.$get('/api/main/article/category/')
-      return { ArticuloData, CategoryData};
-    },
-    data (){
-      return {
-        filterBy: ''
-      }
-    },
-    computed: {
-      filterNews(){
-        return this.ArticuloData.results.filter((list) => {
-          return list.category.categoria_nm.match(this.filterBy)
-        });
-      }
-    },
-    methods: {
-      async LoadMore(){
-        if (this.ArticuloData.next) {
-          var url =this.ArticuloData.next.substr(this.ArticuloData.next.indexOf('/', 7) + 1)
-          let response = await this.$axios.$get(url)
-          this.ArticuloData.next = response.next
-          for ( const i in response.results) {
-            this.ArticuloData.results.push(response.results[i])
-          }
-        }
-      }
-    }
-  }
-</script>
-
 <style lang="scss" scoped>
   .return {
     background: url('~/static/img/icon/Flecha_der_brown.png') no-repeat 10% 50%;

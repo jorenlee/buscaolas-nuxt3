@@ -1,3 +1,34 @@
+<script setup>
+    // export default {
+    //     data() {
+    //         return {
+    //             lists: [
+    //                 {
+    //                     id: 1,
+    //                 },
+    //                 {
+    //                     id: 2,
+    //                 },
+    //                 {
+    //                     id: 3,
+    //                 },
+    //                 {
+    //                     id: 4,
+    //                 },
+    //                 {
+    //                     id: 5,
+    //                 },
+    //                 {
+    //                     id: 6,
+    //                 },
+    //                 {
+    //                     id: 7,
+    //                 }
+    //             ]
+    //         }
+    //     }
+    // }
+</script>
 <template>
   <div>
     <Header/>
@@ -170,39 +201,6 @@
     <Footer/>
   </div>
 </template>
-
-<script>
-    export default {
-        data() {
-            return {
-                lists: [
-                    {
-                        id: 1,
-                    },
-                    {
-                        id: 2,
-                    },
-                    {
-                        id: 3,
-                    },
-                    {
-                        id: 4,
-                    },
-                    {
-                        id: 5,
-                    },
-                    {
-                        id: 6,
-                    },
-                    {
-                        id: 7,
-                    }
-                ]
-            }
-        }
-    }
-</script>
-
 <style lang="scss" scoped>
     p {
         margin: 0;

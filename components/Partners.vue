@@ -1,3 +1,26 @@
+<script setup>
+  // export default {
+  //   props: {
+  //     partners: Array
+  //   },
+  //   data() {
+  //     return {
+  //       partners2: [],
+  //     }
+  //   },
+  //    mounted() {
+  //     // this.fetchData();
+  //   },
+  //   methods: {
+  //     async fetchData() {
+  //       await this.$axios.$get('/api/main/home')
+  //         .then(response => {
+  //           this.partners2 = response.sociosall;
+  //         });
+  //     }
+  //   }
+  // }
+</script>
 <template>
   <div class="w-9/12 mx-auto mt-10 lg:mb-10 mb-3">
     <div class="lg:text-left text-center uppercase text-4xl font-bold mb-12 blue">
@@ -13,31 +36,6 @@
     </ul>
   </div>
 </template>
-
-<script>
-  export default {
-    props: {
-      partners: Array
-    },
-    data() {
-      return {
-        partners2: [],
-      }
-    },
-     mounted() {
-      // this.fetchData();
-    },
-    methods: {
-      async fetchData() {
-        await this.$axios.$get('/api/main/home')
-          .then(response => {
-            this.partners2 = response.sociosall;
-          });
-      }
-    }
-  }
-</script>
-
 <style lang="scss" scoped>
   .blue {
     color: #1C496B;

@@ -1,3 +1,41 @@
+<script setup>
+  // export default {
+  //   async asyncData({ $axios }) {
+  //     const SociosData = await $axios.$get("api/main/socios/");
+  //     return { SociosData};
+  //   },
+  //   data() {
+  //     return {
+  //       lists: [
+  //         {
+  //           id:1,
+  //         },
+  //         {
+  //           id:2,
+  //         },
+  //         {
+  //           id:3,
+  //         },
+  //         {
+  //           id:4,
+  //         },
+  //         {
+  //           id:5,
+  //         },
+  //         {
+  //           id:6,
+  //         },
+  //         {
+  //           id:7,
+  //         },
+  //         {
+  //           id:8,
+  //         }
+  //       ]
+  //     }
+  //   }
+  // }
+</script>
 <template>
   <div>
     <Header/>
@@ -80,44 +118,7 @@
   </div>
 </template>
 
-<script>
-  export default {
-    async asyncData({ $axios }) {
-      const SociosData = await $axios.$get("api/main/socios/");
-      return { SociosData};
-    },
-    data() {
-      return {
-        lists: [
-          {
-            id:1,
-          },
-          {
-            id:2,
-          },
-          {
-            id:3,
-          },
-          {
-            id:4,
-          },
-          {
-            id:5,
-          },
-          {
-            id:6,
-          },
-          {
-            id:7,
-          },
-          {
-            id:8,
-          }
-        ]
-      }
-    }
-  }
-</script>
+
 
 <style lang="scss" scoped>
   .gradient-color{

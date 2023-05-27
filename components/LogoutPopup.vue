@@ -1,3 +1,6 @@
+<script setup>
+    // export default {}
+</script>
 <template>
     <div class="mx-auto w-800 shadow-md">
         <div class="relative">
@@ -15,11 +18,6 @@
         </div>
     </div>
 </template>
-
-<script>
-    export default {}
-</script>
-
 <style lang="scss" scoped>
     .bg-gradient {
         background: linear-gradient(163.41deg, rgba(28, 73, 107, 0.9) 0%, rgba(0, 169, 157, 0.9) 100%);

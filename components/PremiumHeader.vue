@@ -1,3 +1,6 @@
+<script setup>
+  // export default {}
+</script>
 <template>
   <div  class="header">
       <div class="flex container mx-auto lg:w-8/12 lg:pt-1">
@@ -13,11 +16,6 @@
       </div>
   </div>
 </template>
-
-<script>
-  export default {}
-</script>
-
 <style lang="scss" scoped>
   .header {
     background: #1C496B;

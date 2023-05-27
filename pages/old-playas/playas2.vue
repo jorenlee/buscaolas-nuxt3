@@ -1,3 +1,41 @@
+<script setup>
+  // export default {
+  //   data() {
+  //     return {
+  //       days: [
+  //         {
+  //           id: 1,
+  //           name: 'LUNES'
+  //         },
+  //         {
+  //           id: 2,
+  //           name: 'MARTES'
+  //         },
+  //         {
+  //           id: 3,
+  //           name: 'Miércoles'
+  //         },
+  //         {
+  //           id: 4,
+  //           name: 'JUEVES'
+  //         },
+  //         {
+  //           id: 5,
+  //           name: 'VIERNES'
+  //         },
+  //         {
+  //           id: 6,
+  //           name: 'sábado'
+  //         },
+  //         {
+  //           id: 7,
+  //           name: 'domingo'
+  //         }
+  //       ]
+  //     }
+  //   }
+  // }
+</script>
 <template>
   <!-- separate sub components next push -->
   <div>
@@ -554,46 +592,6 @@
     <Footer/>
   </div>
 </template>
-
-<script>
-  export default {
-    data() {
-      return {
-        days: [
-          {
-            id: 1,
-            name: 'LUNES'
-          },
-          {
-            id: 2,
-            name: 'MARTES'
-          },
-          {
-            id: 3,
-            name: 'Miércoles'
-          },
-          {
-            id: 4,
-            name: 'JUEVES'
-          },
-          {
-            id: 5,
-            name: 'VIERNES'
-          },
-          {
-            id: 6,
-            name: 'sábado'
-          },
-          {
-            id: 7,
-            name: 'domingo'
-          }
-        ]
-      }
-    }
-  }
-</script>
-
 <style lang="scss" scoped>
   // shorten next push and use tailwind JusInTime
   .error {

@@ -1,3 +1,11 @@
+<script setup>
+// export default {
+//   data() {
+//     return {};
+//   },
+//   methods: {},
+// };
+</script>
 <template>
   <div>
     <!-- <Header /> -->
@@ -23,16 +31,6 @@
     <Footer />
   </div>
 </template>
-
-<script>
-export default {
-  data() {
-    return {};
-  },
-  methods: {},
-};
-</script>
-
 <style lang="scss" scoped>
  .bg-wave {
   background: url("~/static/img/banner/image2exito.png") no-repeat;

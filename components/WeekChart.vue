@@ -1,6 +1,5 @@
-<script>
+<script setup>
 import { Bar } from 'vue-chartjs'
-
 export default {
   extends: Bar,
   props: {

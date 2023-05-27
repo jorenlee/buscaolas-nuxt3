@@ -1,3 +1,52 @@
+<script setup>
+//   export default {
+//       head() {
+//     return {
+//       title:
+//         "Copa Poisson 2022 - Buscaolas",
+//       meta: [
+//         {
+//           hid: "description",
+//           name: "description",
+//           content:
+//             "Copa Poisson 20200 playa la serenea 16 y 17 de julio"
+//         },
+//         {
+//           hid: "og:title",
+//           name: "og:title",
+//           content:
+//             "Copa Poisson 2022 - Buscaolas",
+//         },
+//         {
+//           hid: "og:description",
+//           name: "og:description",
+//           content:
+//             "Copa Poisson 20200 playa la serenea 16 y 17 de julio "
+//         },
+//         {
+//           hid: "og:image",
+//           name: "og:image",
+//           content: "https://media-buscaolas.s3.sa-east-1.amazonaws.com/copa_poisson/2022/Copa+Poisson+2022+(1).png"
+//         },
+//         {
+//           hid: "og:url",
+//           name: "og:url",
+//           content: "https://buscaolas.cl/torneo/copa-poisson-2022"
+//         },
+//       ],
+//     };
+//   },
+//       data() {
+//           return {
+//               url: "https://c75a7e79204e539d.mediapackage.us-east-1.amazonaws.com/out/v1/ae4f3de03af941b093da2455d934df95/index.m3u8"
+//           }
+//       },
+//         async asyncData({ $axios }) {
+//       const HeatsData = await $axios.$get("/api/torneo/torneo");
+//       return { HeatsData };
+//     }
+//   }
+</script>
 <template>
   <div class="overflow-x-hidden">
     <Header/>
@@ -162,57 +211,6 @@
     <Footer/>
   </div>
 </template>
-
-<script>
-  export default {
-      head() {
-    return {
-      title:
-        "Copa Poisson 2022 - Buscaolas",
-      meta: [
-        {
-          hid: "description",
-          name: "description",
-          content:
-            "Copa Poisson 20200 playa la serenea 16 y 17 de julio"
-        },
-        {
-          hid: "og:title",
-          name: "og:title",
-          content:
-            "Copa Poisson 2022 - Buscaolas",
-        },
-        {
-          hid: "og:description",
-          name: "og:description",
-          content:
-            "Copa Poisson 20200 playa la serenea 16 y 17 de julio "
-        },
-        {
-          hid: "og:image",
-          name: "og:image",
-          content: "https://media-buscaolas.s3.sa-east-1.amazonaws.com/copa_poisson/2022/Copa+Poisson+2022+(1).png"
-        },
-        {
-          hid: "og:url",
-          name: "og:url",
-          content: "https://buscaolas.cl/torneo/copa-poisson-2022"
-        },
-      ],
-    };
-  },
-      data() {
-          return {
-              url: "https://c75a7e79204e539d.mediapackage.us-east-1.amazonaws.com/out/v1/ae4f3de03af941b093da2455d934df95/index.m3u8"
-          }
-      },
-        async asyncData({ $axios }) {
-      const HeatsData = await $axios.$get("/api/torneo/torneo");
-      return { HeatsData };
-    }
-  }
-</script>
-
 <style lang="scss" scoped>
     .bg-gray {
         background: #E5E5E5;

@@ -1,3 +1,70 @@
+<script setup>
+  // import Swiper from 'swiper/swiper-bundle.min';
+  // import 'swiper/swiper-bundle.min.css';
+  // export default {
+  //   head() {
+  //     return {
+  //       title: this.ArticuloData.articulo.titulo,
+  //       meta: [
+  //         {
+  //           hid: "description",
+  //           name: "description",
+  //           content: this.ArticuloData.articulo.resumen,
+  //         },
+  //         {
+  //           hid: "og:title",
+  //           name: "og:title",
+  //           content: this.ArticuloData.articulo.titulo,
+  //         },
+  //         {
+  //           hid: "og:url",
+  //           name: "og:url",
+  //           content: "https://buscaolas.cl/articulo/" + this.ArticuloData.articulo.url,
+  //         },
+  //         {
+  //           hid: "og:description",
+  //           name: "og:description",
+  //           content: this.ArticuloData.articulo.resumen,
+  //         },
+  //         {
+  //           hid: "og:image",
+  //           name: "og:image",
+  //           content: this.ArticuloData.articulo.imagen,
+  //         },
+  //       ],
+  //     };
+  //   },
+  //   data() {
+  //     return {
+  //     }
+  //   },
+  //   mounted() {
+  //     new Swiper('.Articulo', {
+  //       loop: true,
+  //       loopFillGroupWithBlank: true,
+  //       slidesPerGroup: 1,
+  //       navigation: {
+  //         nextEl: '.swiper-button-next',
+  //         prevEl: '.swiper-button-prev',
+  //       },
+  //       breakpoints: {
+  //         1024: {
+  //           slidesPerView: 3,
+  //         },
+  //         1023: {
+  //           slidesPerView: 1,
+  //         },
+  //       },
+  //     });
+  //   },
+  //   methods: {
+  //   },
+  //   async asyncData({ $axios, params }) {
+  //     const ArticuloData = await $axios.$get("/api/main/articulo/" + params.slug);
+  //     return { ArticuloData };
+  //   }
+  // }
+</script>
 <template>
   <div>
     <Header/>
@@ -150,73 +217,7 @@
   </div>
 </template>
 
-<script>
-  import Swiper from 'swiper/swiper-bundle.min';
-  import 'swiper/swiper-bundle.min.css';
-  export default {
-    head() {
-      return {
-        title: this.ArticuloData.articulo.titulo,
-        meta: [
-          {
-            hid: "description",
-            name: "description",
-            content: this.ArticuloData.articulo.resumen,
-          },
-          {
-            hid: "og:title",
-            name: "og:title",
-            content: this.ArticuloData.articulo.titulo,
-          },
-          {
-            hid: "og:url",
-            name: "og:url",
-            content: "https://buscaolas.cl/articulo/" + this.ArticuloData.articulo.url,
-          },
-          {
-            hid: "og:description",
-            name: "og:description",
-            content: this.ArticuloData.articulo.resumen,
-          },
-          {
-            hid: "og:image",
-            name: "og:image",
-            content: this.ArticuloData.articulo.imagen,
-          },
-        ],
-      };
-    },
-    data() {
-      return {
-      }
-    },
-    mounted() {
-      new Swiper('.Articulo', {
-        loop: true,
-        loopFillGroupWithBlank: true,
-        slidesPerGroup: 1,
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-        breakpoints: {
-          1024: {
-            slidesPerView: 3,
-          },
-          1023: {
-            slidesPerView: 1,
-          },
-        },
-      });
-    },
-    methods: {
-    },
-    async asyncData({ $axios, params }) {
-      const ArticuloData = await $axios.$get("/api/main/articulo/" + params.slug);
-      return { ArticuloData };
-    }
-  }
-</script>
+
 
 <style lang="scss" scoped>
   ul {

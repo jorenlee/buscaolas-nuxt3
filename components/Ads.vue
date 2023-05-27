@@ -1,3 +1,85 @@
+<script setup>
+// export default {
+//     props: {
+//       location: String,
+//       ismobile: Boolean,
+//     },
+//     data () {
+//       return {
+//         Ads_data: null,
+//         premium: true,
+//         mobile: false
+//       }
+//     },
+//     async fetch(){
+//       try {
+//           const DataAds  = await this.$axios.$get("/api/main/ads/?location=" + this.location).then(
+//             (res) => {this.Ads_data = res}
+//           )
+//           if (this.Ads_data.length > 0) {
+//             this.premium = false
+//           }
+//         var url_path = this.$route.path
+//         if (this.$device.isMobile) {
+//             var device1 = 'mobile'
+//             var ads_infot = this.Ads_data.find(i => i.mobile === true )
+//           } else if (this.$device.isTablet) {
+//             var device1 = 'tablet'
+//             var ads_infot = this.Ads_data.find(i => i.mobile === true )
+//           } else if (this.$device.isDesktop) {
+//             var device1 = 'desktop'
+//             var ads_infot = this.Ads_data.find(i => i.type === 'banner' )
+//           }
+//         //  const DataAdstracking = await this.$axios.$post("/api/main/ads/tracking/", {
+//         //                           url_adspage: url_path,
+//         //                           type_tracking: "impression",
+//         //                           device: device1,
+//         //                           ads: ads_infot.id
+//         //                           } );    
+//         return { DataAds }
+//        }
+//        catch (e) {
+//          console.log(e)
+//         return 
+//        }
+//     },
+//     mounted (){
+//         if (screen.width < 769){
+//           this.mobile = true
+//         }
+//     },
+//     methods: {
+//         async track(ads_id, clicks){
+//            var url_path = this.$route.path
+//               if (this.$device.isMobile) {
+//                   var device1 = 'mobile'
+//                 } else if (this.$device.isTablet) {
+//                   var device1 = 'tablet'
+//                 } else if (this.$device.isDesktop) {
+//                   var device1 = 'desktop'
+//                 }
+//           // const DataAdstracking = await this.$axios.$post("/api/main/ads/tracking/", {
+//           //                         url_adspage: url_path,
+//           //                         type_tracking: "click",
+//           //                         device: device1,
+//           //                         ads: ads_id
+//           //                         } );
+//         }
+//     },
+//     computed: {
+//      ads_info(){
+//       if (this.mobile) {
+//         var ads = this.Ads_data.find(i => i.mobile === true )
+//         return ads
+//       } else {
+//         var ads = this.Ads_data.find(i => i.type === 'banner' && i.mobile === false)
+//         return ads
+//       }
+//      }
+//   }
+
+// }
+</script>
 <template>
   <div class="mt-6">
     <div class="lg:w-9/12 mx-auto lg:flex go-premium-banner p-10" v-if="premium">
@@ -22,89 +104,6 @@
     </div>
   </div>
 </template>
-<script>
-export default {
-    props: {
-      location: String,
-      ismobile: Boolean,
-    },
-    data () {
-      return {
-        Ads_data: null,
-        premium: true,
-        mobile: false
-      }
-    },
-    async fetch(){
-      try {
-          const DataAds  = await this.$axios.$get("/api/main/ads/?location=" + this.location).then(
-            (res) => {this.Ads_data = res}
-          )
-          if (this.Ads_data.length > 0) {
-            this.premium = false
-          }
-        var url_path = this.$route.path
-        if (this.$device.isMobile) {
-            var device1 = 'mobile'
-            var ads_infot = this.Ads_data.find(i => i.mobile === true )
-          } else if (this.$device.isTablet) {
-            var device1 = 'tablet'
-            var ads_infot = this.Ads_data.find(i => i.mobile === true )
-          } else if (this.$device.isDesktop) {
-            var device1 = 'desktop'
-            var ads_infot = this.Ads_data.find(i => i.type === 'banner' )
-          }
-        //  const DataAdstracking = await this.$axios.$post("/api/main/ads/tracking/", {
-        //                           url_adspage: url_path,
-        //                           type_tracking: "impression",
-        //                           device: device1,
-        //                           ads: ads_infot.id
-        //                           } );    
-        return { DataAds }
-       }
-       catch (e) {
-         console.log(e)
-        return 
-       }
-    },
-    mounted (){
-        if (screen.width < 769){
-          this.mobile = true
-        }
-    },
-    methods: {
-        async track(ads_id, clicks){
-           var url_path = this.$route.path
-              if (this.$device.isMobile) {
-                  var device1 = 'mobile'
-                } else if (this.$device.isTablet) {
-                  var device1 = 'tablet'
-                } else if (this.$device.isDesktop) {
-                  var device1 = 'desktop'
-                }
-          // const DataAdstracking = await this.$axios.$post("/api/main/ads/tracking/", {
-          //                         url_adspage: url_path,
-          //                         type_tracking: "click",
-          //                         device: device1,
-          //                         ads: ads_id
-          //                         } );
-        }
-    },
-    computed: {
-     ads_info(){
-      if (this.mobile) {
-        var ads = this.Ads_data.find(i => i.mobile === true )
-        return ads
-      } else {
-        var ads = this.Ads_data.find(i => i.type === 'banner' && i.mobile === false)
-        return ads
-      }
-     }
-  }
-
-}
-</script>
-
 <style lang="scss" scoped>
  .go-premium-banner {
     background: #F0F0F0;

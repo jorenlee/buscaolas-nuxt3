@@ -1,3 +1,82 @@
+<script setup>
+  // export default {
+  //   data() {
+  //     return {
+  //       days: [
+  //         {
+  //           id: 1,
+  //           name: 'LUNES',
+  //           isActive: false,
+  //         },
+  //         {
+  //           id: 2,
+  //           name: 'MARTES',
+  //           isActive: false,
+  //         },
+  //         {
+  //           id: 3,
+  //           name: 'Miércoles',
+  //           isActive: false,
+  //         },
+  //         {
+  //           id: 4,
+  //           name: 'JUEVES',
+  //           isActive: false,
+  //         },
+  //         {
+  //           id: 5,
+  //           name: 'VIERNES',
+  //           isActive: false,
+  //         },
+  //         {
+  //           id: 6,
+  //           name: 'sábado',
+  //           isActive: false,
+  //         },
+  //         {
+  //           id: 7,
+  //           name: 'domingo',
+  //           isActive: false,
+  //         }
+  //       ],
+  //       hours: [
+  //         {
+  //           id: 1
+  //         },
+  //         {
+  //           id: 2
+  //         },
+  //         {
+  //           id: 3
+  //         },
+  //         {
+  //           id: 4
+  //         },
+  //         {
+  //           id: 5
+  //         },
+  //         {
+  //           id: 6
+  //         },
+  //         {
+  //           id: 7
+  //         }
+  //       ]
+  //     }
+  //   },
+  //   methods: {
+  //     isToggle (day) {
+  //       day.isActive = !day.isActive;
+  //     },
+  //     clickDayBar(e) {
+  //       const activePoints = chart2.getElementsAtEventForMode(e, 'index', { intersect: true }, false)
+  //       if (Object.keys(activePoints).length !== 0) {
+  //         this.days[activePoints[0].index].isActive = true;
+  //       }
+  //     }
+  //   }
+  // }
+</script>
 <template>
   <!-- separate sub components next push -->
     <div>
@@ -463,87 +542,6 @@
       <Footer/>
     </div>
 </template>
-
-<script>
-  export default {
-    data() {
-      return {
-        days: [
-          {
-            id: 1,
-            name: 'LUNES',
-            isActive: false,
-          },
-          {
-            id: 2,
-            name: 'MARTES',
-            isActive: false,
-          },
-          {
-            id: 3,
-            name: 'Miércoles',
-            isActive: false,
-          },
-          {
-            id: 4,
-            name: 'JUEVES',
-            isActive: false,
-          },
-          {
-            id: 5,
-            name: 'VIERNES',
-            isActive: false,
-          },
-          {
-            id: 6,
-            name: 'sábado',
-            isActive: false,
-          },
-          {
-            id: 7,
-            name: 'domingo',
-            isActive: false,
-          }
-        ],
-        hours: [
-          {
-            id: 1
-          },
-          {
-            id: 2
-          },
-          {
-            id: 3
-          },
-          {
-            id: 4
-          },
-          {
-            id: 5
-          },
-          {
-            id: 6
-          },
-          {
-            id: 7
-          }
-        ]
-      }
-    },
-    methods: {
-      isToggle (day) {
-        day.isActive = !day.isActive;
-      },
-      clickDayBar(e) {
-        const activePoints = chart2.getElementsAtEventForMode(e, 'index', { intersect: true }, false)
-        if (Object.keys(activePoints).length !== 0) {
-          this.days[activePoints[0].index].isActive = true;
-        }
-      }
-    }
-  }
-</script>
-
 <style lang="scss" scoped>
   // shorten next push and use tailwind JusInTime
   .error {

@@ -1,3 +1,6 @@
+<script setup>
+  // export default {}
+</script>
 <template>
   <div>
     <Header/>
@@ -61,11 +64,6 @@
     <Footer/>
   </div>
 </template>
-
-<script>
-  export default {}
-</script>
-
 <style lang="scss" scoped>
   .w-85{
     width: 22rem;

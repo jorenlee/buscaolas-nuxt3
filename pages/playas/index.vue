@@ -1,3 +1,11 @@
+<script setup>
+  // export default {
+  //   async asyncData({ $axios }) {
+  //     const PlayasData = await $axios.$get("/api/main/playas/home");
+  //     return { PlayasData };
+  //   },
+  // }
+</script>
 <template>
   <div>
     <client-only>
@@ -81,16 +89,6 @@
     <Footer/>
   </div>
 </template>
-
-<script>
-  export default {
-    async asyncData({ $axios }) {
-      const PlayasData = await $axios.$get("/api/main/playas/home");
-      return { PlayasData };
-    },
-  }
-</script>
-
 <style lang="scss" scoped>
   .gradient-color{
     background: linear-gradient(163.41deg, #1C496B 0%, #00A99D 100%);

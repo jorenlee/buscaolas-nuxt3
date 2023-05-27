@@ -1,3 +1,16 @@
+<script setup>
+    // export default {
+    //     props: {
+    //         mainText: String,
+    //         title: String
+    //     },
+    //     methods: {
+    //         Close() {
+    //             this.$emit('ClosePopup')
+    //         },
+    //     }
+    // }
+</script>
 <template>
     <div class="mx-auto w-800 bg-gradient shadow-md z-1 mt-10">
         <div class="relative">
@@ -20,21 +33,6 @@
         </div>
     </div>
 </template>
-
-<script>
-    export default {
-        props: {
-            mainText: String,
-            title: String
-        },
-        methods: {
-            Close() {
-                this.$emit('ClosePopup')
-            },
-        }
-    }
-</script>
-
 <style lang="scss" scoped>
     .bg-gradient {
         background: linear-gradient(163.41deg, rgba(28, 73, 107, 0.9) 0%, rgba(0, 169, 157, 0.9) 100%);

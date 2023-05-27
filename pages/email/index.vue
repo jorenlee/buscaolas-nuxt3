@@ -1,3 +1,24 @@
+<script setup>
+  // export default {
+  //   data() {
+  //     return {
+  //       playa: [
+  //         {
+  //           id: 1,
+  //         },
+  //         {
+  //           id: 2,
+  //         },
+  //         {
+  //           id: 3,
+  //         }
+  //       ],
+  //     }
+  //   },
+  //   methods: {
+  //   }
+  // }
+</script>
 <template>
   <!-- separate sub components next push -->
   <div>
@@ -154,29 +175,6 @@
     <Footer/>
   </div>
 </template>
-
-<script>
-  export default {
-    data() {
-      return {
-        playa: [
-          {
-            id: 1,
-          },
-          {
-            id: 2,
-          },
-          {
-            id: 3,
-          }
-        ],
-      }
-    },
-    methods: {
-    }
-  }
-</script>
-
 <style lang="scss" scoped>
   // shorten next push and use tailwind JusInTime
   .error {
