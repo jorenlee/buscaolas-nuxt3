@@ -1,3 +1,83 @@
+<script setup>
+  // import { mapGetters} from 'vuex';
+  // import moment from 'moment'
+  // export default {
+  //   async asyncData (context) {
+  //     let AccountData = await context.app.$axios.$get('api/main/account/', {}, { headers: {"Authorization" : `Bearer ${context.app.$auth.strategy.token.get('local')}`} })
+  //   return { AccountData }
+  //   },
+  //   middleware: 'auth',
+  //   computed: {
+  //     ...mapGetters(['isAuthenticated', 'loggedInUser', 'IsPremium']),
+  //     AvatarLetter() {
+  //         return this.$store.getters.loggedInUser.first_name.charAt(0)
+  //     }
+  //   },
+  //   methods: {
+  //     async logout() {
+  //       const response = await this.$auth.logout()
+  //       this.$router.push('/')
+  //     },
+  //     async Changepassword(){
+  //         try {
+  //           let response = await this.$axios.$post('/api/main/auth/password/change/', {
+  //                       new_password1: this.new_password1,
+  //                       new_password2: this.new_password2,
+  //                       old_password: this.old_password,
+  //                   })
+  //           this.$toast.success('La clave se cambio con exito')
+  //         } catch(e){
+  //             this.$toast.error(e)
+  //         }
+  //     },
+  //     async ChangeEmail(){
+  //        try{
+  //           let response = await this.$axios.$put('/api/main/user/email/' + this.loggedInUser.id, {
+  //                       email: this.new_email
+  //          })
+  //          this.$toast.success('El email se cambio con exito')
+  //          this.$router.push("/")
+  //        } catch(e) {
+  //          this.$toast.error(e)
+  //        }
+  //     },
+  //     async ChangeCard() {
+  //       try {
+  //         let response = await this.$axios.$post('api/main/gateway/changecard/', {
+  //           'id': this.loggedInUser.id
+  //           }, { headers: {"Authorization" : `Bearer ${this.$auth.strategy.token.get('local')}`} })
+  //           window.location.href = response.url;
+  //       } catch(e) {
+  //         this.$toast.error(e)
+  //       }
+  //     },
+  //      async CancelSubscription() {
+  //       try {
+  //         let response = await this.$axios.$post('api/main/subscription/cancel/', {
+  //           'id': this.loggedInUser.id
+  //           }, { headers: {"Authorization" : `Bearer ${this.$auth.strategy.token.get('local')}`} })
+  //         this.CancelPopup = false
+  //         this.$toast.success("Tu suscripcion sera cancelada el " + moment(response.cancelDate).format('DD-MM-YYYY'))
+  //       } catch(e) {
+  //         this.$toast.error(e)
+  //       }
+  //     },
+  //     openpopup() {
+  //       this.CancelPopup = true
+  //     }
+  //   },
+  //   data() {
+  //     return {
+  //       new_password1: null,
+  //       new_password2: null,
+  //       old_password: null,
+  //       new_email: null,
+  //       CancelPopup: false
+  //     }
+  //   }
+  // }
+</script>
+
 <template>
   <div class="relative">
     <Header />
@@ -202,86 +282,6 @@
     </div>
   </div>
 </template>
-
-<script>
-  import { mapGetters} from 'vuex';
-  import moment from 'moment'
-  export default {
-    async asyncData (context) {
-      let AccountData = await context.app.$axios.$get('api/main/account/', {}, { headers: {"Authorization" : `Bearer ${context.app.$auth.strategy.token.get('local')}`} })
-    return { AccountData }
-    },
-    middleware: 'auth',
-    computed: {
-      ...mapGetters(['isAuthenticated', 'loggedInUser', 'IsPremium']),
-      AvatarLetter() {
-          return this.$store.getters.loggedInUser.first_name.charAt(0)
-      }
-    },
-    methods: {
-      async logout() {
-        const response = await this.$auth.logout()
-        this.$router.push('/')
-      },
-      async Changepassword(){
-          try {
-            let response = await this.$axios.$post('/api/main/auth/password/change/', {
-                        new_password1: this.new_password1,
-                        new_password2: this.new_password2,
-                        old_password: this.old_password,
-                    })
-            this.$toast.success('La clave se cambio con exito')
-          } catch(e){
-              this.$toast.error(e)
-          }
-      },
-      async ChangeEmail(){
-         try{
-            let response = await this.$axios.$put('/api/main/user/email/' + this.loggedInUser.id, {
-                        email: this.new_email
-           })
-           this.$toast.success('El email se cambio con exito')
-           this.$router.push("/")
-         } catch(e) {
-           this.$toast.error(e)
-         }
-      },
-      async ChangeCard() {
-        try {
-          let response = await this.$axios.$post('api/main/gateway/changecard/', {
-            'id': this.loggedInUser.id
-            }, { headers: {"Authorization" : `Bearer ${this.$auth.strategy.token.get('local')}`} })
-            window.location.href = response.url;
-        } catch(e) {
-          this.$toast.error(e)
-        }
-      },
-       async CancelSubscription() {
-        try {
-          let response = await this.$axios.$post('api/main/subscription/cancel/', {
-            'id': this.loggedInUser.id
-            }, { headers: {"Authorization" : `Bearer ${this.$auth.strategy.token.get('local')}`} })
-          this.CancelPopup = false
-          this.$toast.success("Tu suscripcion sera cancelada el " + moment(response.cancelDate).format('DD-MM-YYYY'))
-        } catch(e) {
-          this.$toast.error(e)
-        }
-      },
-      openpopup() {
-        this.CancelPopup = true
-      }
-    },
-    data() {
-      return {
-        new_password1: null,
-        new_password2: null,
-        old_password: null,
-        new_email: null,
-        CancelPopup: false
-      }
-    }
-  }
-</script>
 
 <style lang="scss" scoped>
 .shadow-1 {

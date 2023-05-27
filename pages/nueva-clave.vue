@@ -1,3 +1,36 @@
+<script setup>
+  // export default {
+  //   data() {
+  //     return {
+  //       password1: null,
+  //       password2: null,
+  //       success: false
+  //     }
+  //   },
+  //   methods: {
+  //     async Changepassword() {
+  //       if (this.password1 == this.password2) {
+  //           try {
+  //             let response = await this.$axios.$post('api/main/reset-password/confirm/', {
+  //                           password: this.password1,
+  //                           token: this.$route.query.token
+  //                       })
+  //             this.success = true
+  //           } catch(e){
+  //             if (e.response.status == 404) {
+  //             this.$toast.error("link a expirado, debes volver a solicitar tu clave")
+  //             } else {
+  //             this.$toast.error(e.response.detail)
+  //             }
+  //           }
+  //       } else {
+  //         this.$toast.error("La clave no son iguales")
+  //       }
+  //     }
+  //   }
+  // }
+</script>
+
 <template>
   <div>
     <Header/>
@@ -55,39 +88,6 @@
     <Footer/>
   </div>
 </template>
-
-<script>
-  export default {
-    data() {
-      return {
-        password1: null,
-        password2: null,
-        success: false
-      }
-    },
-    methods: {
-      async Changepassword() {
-        if (this.password1 == this.password2) {
-            try {
-              let response = await this.$axios.$post('api/main/reset-password/confirm/', {
-                            password: this.password1,
-                            token: this.$route.query.token
-                        })
-              this.success = true
-            } catch(e){
-              if (e.response.status == 404) {
-              this.$toast.error("link a expirado, debes volver a solicitar tu clave")
-              } else {
-              this.$toast.error(e.response.detail)
-              }
-            }
-        } else {
-          this.$toast.error("La clave no son iguales")
-        }
-      }
-    }
-  }
-</script>
 
 <style lang="scss" scoped>
   .w-85{

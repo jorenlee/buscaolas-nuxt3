@@ -1,3 +1,13 @@
+<script setup>
+//   export default {
+//       data() {
+//           return {
+//               url: "https://c75a7e79204e539d.mediapackage.us-east-1.amazonaws.com/out/v1/ae4f3de03af941b093da2455d934df95/index.m3u8"
+//           }
+//       }
+//   }
+</script>
+
 <template>
   <div class="overflow-x-hidden">
     <Header/>
@@ -81,16 +91,6 @@
     <Footer/>
   </div>
 </template>
-
-<script>
-  export default {
-      data() {
-          return {
-              url: "https://c75a7e79204e539d.mediapackage.us-east-1.amazonaws.com/out/v1/ae4f3de03af941b093da2455d934df95/index.m3u8"
-          }
-      }
-  }
-</script>
 
 <style lang="scss" scoped>
     .bg-gray {

@@ -1,3 +1,18 @@
+<script setup>
+//   export default { 
+//       data () {
+//           return {
+//               register1: false
+//           }
+//       },
+//       methods: {
+//           ToRegister() {
+//               this.register1 = true
+//           }
+//       }
+//   }
+</script>
+
 <template>
   <div>
     <Header :registerPremium="register1" @CloseRegisterEvent="register1=false"/>
@@ -195,21 +210,6 @@
     <Footer/>
   </div>
 </template>
-
-<script>
-  export default { 
-      data () {
-          return {
-              register1: false
-          }
-      },
-      methods: {
-          ToRegister() {
-              this.register1 = true
-          }
-      }
-  }
-</script>
 
 <style lang="scss" scoped>
     .gradient {

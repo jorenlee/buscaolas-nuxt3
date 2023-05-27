@@ -1,3 +1,37 @@
+<script setup>
+// export default {
+  // async asyncData({ $axios }) {
+  //   const PlayasData = await $axios.$get(
+  //     "/api/main/playa/premium/multicam/?id=14"
+  //   );
+  //   return { PlayasData };
+  // },
+  // mounted() {
+  //   console.log(
+  //     "current_rating.rating:",
+  //     this.PlayasData.results[0][0].forecast[0].current_rating.rating
+  //   );
+  // },
+  //methods: {
+    // ChangeVideoSource() {
+    //   if (this.$store.getters.IsPremium) {
+    //     if (this.qualityVideo == "SD") {
+    //       this.qualityVideo = "HD";
+    //     } else {
+    //       this.qualityVideo = "SD";
+    //     }
+    //   } else {
+    //     console.log("hrer");
+    //     this.popup_title = "HD Exclusivo para premium";
+    //     this.popup_maintext =
+    //       "Prueba premium por 14 días gratis y ve todas las olas en alta definición'";
+    //     this.premiumPopup = true;
+    //   }
+    // },
+//   },
+// };
+</script>
+
 <template>
   <div>
     <client-only>
@@ -172,40 +206,6 @@
     <Footer />
   </div>
 </template>
-
-<script>
-export default {
-  // async asyncData({ $axios }) {
-  //   const PlayasData = await $axios.$get(
-  //     "/api/main/playa/premium/multicam/?id=14"
-  //   );
-  //   return { PlayasData };
-  // },
-  // mounted() {
-  //   console.log(
-  //     "current_rating.rating:",
-  //     this.PlayasData.results[0][0].forecast[0].current_rating.rating
-  //   );
-  // },
-  methods: {
-    // ChangeVideoSource() {
-    //   if (this.$store.getters.IsPremium) {
-    //     if (this.qualityVideo == "SD") {
-    //       this.qualityVideo = "HD";
-    //     } else {
-    //       this.qualityVideo = "SD";
-    //     }
-    //   } else {
-    //     console.log("hrer");
-    //     this.popup_title = "HD Exclusivo para premium";
-    //     this.popup_maintext =
-    //       "Prueba premium por 14 días gratis y ve todas las olas en alta definición'";
-    //     this.premiumPopup = true;
-    //   }
-    // },
-  },
-};
-</script>
 
 <style lang="scss" scoped>
 .gradient-color {
