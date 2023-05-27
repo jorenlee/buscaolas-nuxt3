@@ -1,3 +1,52 @@
+<script setup>
+//   export default {
+//       head() {
+//     return {
+//       title:
+//         "Big Toto 2022 - Buscaolas",
+//       meta: [
+//         {
+//           hid: "description",
+//           name: "description",
+//           content:
+//             "Big toto torneo de surf en Totoralillo"
+//         },
+//         {
+//           hid: "og:title",
+//           name: "og:title",
+//           content:
+//             "Big Toto 2022 - Buscaolas",
+//         },
+//         {
+//           hid: "og:description",
+//           name: "og:description",
+//           content:
+//             "Big toto torneo de surf en Totoralillo "
+//         },
+//         {
+//           hid: "og:image",
+//           name: "og:image",
+//           content: "https://media-buscaolas.s3.sa-east-1.amazonaws.com/torneos/big-toto/IMG-20220610-WA0032.jpg"
+//         },
+//         {
+//           hid: "og:url",
+//           name: "og:url",
+//           content: "https://buscaolas.cl/torneo/big-toto"
+//         },
+//       ],
+//     };
+//   },
+//       data() {
+//           return {
+//               url: "https://c75a7e79204e539d.mediapackage.us-east-1.amazonaws.com/out/v1/ae4f3de03af941b093da2455d934df95/index.m3u8"
+//           }
+//       },
+//         async asyncData({ $axios }) {
+//       const HeatsData = await $axios.$get("/api/torneo/torneo");
+//       return { HeatsData };
+//     }
+//   }
+</script>
 <template>
   <div class="overflow-x-hidden">
     <Header/>
@@ -129,57 +178,6 @@
     <Footer/>
   </div>
 </template>
-
-<script>
-  export default {
-      head() {
-    return {
-      title:
-        "Big Toto 2022 - Buscaolas",
-      meta: [
-        {
-          hid: "description",
-          name: "description",
-          content:
-            "Big toto torneo de surf en Totoralillo"
-        },
-        {
-          hid: "og:title",
-          name: "og:title",
-          content:
-            "Big Toto 2022 - Buscaolas",
-        },
-        {
-          hid: "og:description",
-          name: "og:description",
-          content:
-            "Big toto torneo de surf en Totoralillo "
-        },
-        {
-          hid: "og:image",
-          name: "og:image",
-          content: "https://media-buscaolas.s3.sa-east-1.amazonaws.com/torneos/big-toto/IMG-20220610-WA0032.jpg"
-        },
-        {
-          hid: "og:url",
-          name: "og:url",
-          content: "https://buscaolas.cl/torneo/big-toto"
-        },
-      ],
-    };
-  },
-      data() {
-          return {
-              url: "https://c75a7e79204e539d.mediapackage.us-east-1.amazonaws.com/out/v1/ae4f3de03af941b093da2455d934df95/index.m3u8"
-          }
-      },
-        async asyncData({ $axios }) {
-      const HeatsData = await $axios.$get("/api/torneo/torneo");
-      return { HeatsData };
-    }
-  }
-</script>
-
 <style lang="scss" scoped>
     .bg-gray {
         background: #E5E5E5;

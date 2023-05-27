@@ -1,3 +1,45 @@
+<script setup>
+// import Swiper from "swiper/swiper-bundle.min";
+// import "swiper/swiper-bundle.min.css";
+// export default {
+//   props: {
+//     articles: Array,
+//   },
+//   data() {
+//     return {};
+//   },
+//   mounted() {
+//     new Swiper('.Article', {
+//       loop: true,
+//       loopFillGroupWithBlank: true,
+//       slidesPerGroup: 1,
+//       navigation: {
+//         prevEl: ".fa-chevron-left",
+//         nextEl: ".fa-chevron-right",
+//       },
+//       breakpoints: {
+//         1024: {
+//           slidesPerView: 3,
+//         },
+//         1023: {
+//           slidesPerView: 1,
+//         },
+//       },
+//     });
+//   },
+//   //mounted() {
+//   // this.fetchData();
+//   //},
+//   methods: {
+//     // async fetchData() {
+//     //   await this.$axios.$get('/api/main/home')
+//     //     .then(response => {
+//     //       this.articles = response.articulos1;
+//     //     });
+//     // }
+//   },
+// };
+</script>
 <template>
   <div class="lg:w-9/12 mx-auto lg:mt-20 mt-5">
     <div
@@ -130,50 +172,6 @@
     </div>
   </div>
 </template>
-
-<script>
-import Swiper from "swiper/swiper-bundle.min";
-import "swiper/swiper-bundle.min.css";
-export default {
-  props: {
-    articles: Array,
-  },
-  data() {
-    return {};
-  },
-  mounted() {
-    new Swiper('.Article', {
-      loop: true,
-      loopFillGroupWithBlank: true,
-      slidesPerGroup: 1,
-      navigation: {
-        prevEl: ".fa-chevron-left",
-        nextEl: ".fa-chevron-right",
-      },
-      breakpoints: {
-        1024: {
-          slidesPerView: 3,
-        },
-        1023: {
-          slidesPerView: 1,
-        },
-      },
-    });
-  },
-  //mounted() {
-  // this.fetchData();
-  //},
-  methods: {
-    // async fetchData() {
-    //   await this.$axios.$get('/api/main/home')
-    //     .then(response => {
-    //       this.articles = response.articulos1;
-    //     });
-    // }
-  },
-};
-</script>
-
 <style lang="scss" scoped>
 .blue {
   color: #1c496b;

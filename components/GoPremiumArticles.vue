@@ -1,3 +1,11 @@
+<script setup>
+  // export default {
+  //   data() {
+  //     return {
+  //     }
+  //   }
+  // }
+</script>
 <template>
   <div class="mx-auto lg:flex go-premium-banner p-10 mb-10">
     <div class="mb-8 lg:mb-0 font-bold uppercase text-center lg:text-left text-2xl leading-9">
@@ -11,16 +19,6 @@
     </div>
   </div>
 </template>
-
-<script>
-  export default {
-    data() {
-      return {
-      }
-    }
-  }
-</script>
-
 <style lang="scss" scoped>
   .go-premium-banner {
     background: #F0F0F0;

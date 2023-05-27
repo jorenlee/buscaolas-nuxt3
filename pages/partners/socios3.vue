@@ -1,3 +1,11 @@
+<script setup>
+//   export default {
+//     data() {
+//       return {
+//       }
+//     }
+//   }
+</script>
 <template>
   <div>
     <Header/>
@@ -62,16 +70,6 @@
     <Footer/>
   </div>
 </template>
-
-<script>
-  export default {
-    data() {
-      return {
-      }
-    }
-  }
-</script>
-
 <style lang="scss" scoped>
     .gradient-color{
         background: linear-gradient(163.41deg, #1C496B 0%, #00A99D 100%);

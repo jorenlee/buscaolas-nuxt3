@@ -1,3 +1,30 @@
+<script setup>
+// export default {
+//   data () {
+//     return {
+//       name: null,
+//       email: null,
+//       subject: null,
+//       message: null
+//     }
+//   },
+//   methods: {
+//     async Sendform() {
+//       try {
+//       let response = await this.$axios.$post('/api/main/contact/', {
+//                     contact: this.name,
+//                     email: this.email,
+//                     message: this.message,
+//                 })
+//         this.$toast.success('Mensaje enviado con exito')
+//     }
+//      catch(e){
+//       this.$toast.error(e)
+//     }
+//   }
+// }
+// }
+</script>
 <template>
     <div>
       <Header/>
@@ -46,37 +73,7 @@
       <GoPremium2 class="lg:visible invisible lg:w-auto lg:h-auto w-0 h-0"/>
       <Footer/>
     </div>
-  </template>
-  
-  <script>
-    export default {
-      data () {
-        return {
-          name: null,
-          email: null,
-          subject: null,
-          message: null
-        }
-      },
-      methods: {
-        async Sendform() {
-          try {
-          let response = await this.$axios.$post('/api/main/contact/', {
-                        contact: this.name,
-                        email: this.email,
-                        message: this.message,
-                    })
-            this.$toast.success('Mensaje enviado con exito')
-        }
-         catch(e){
-          this.$toast.error(e)
-        }
-      }
-    }
-
-    }
-  </script>
-  
+</template>
   <style lang="scss" scoped>
     .bg-gray {
       background: #E5E5E5;

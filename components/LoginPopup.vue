@@ -1,3 +1,57 @@
+<script setup>
+// import alertaErrors from "./AlertaErrors.vue";
+// export default {
+//   components: { alertaErrors },
+//   data() {
+//     return {
+//       email: "",
+//       password: "",
+//       error: null,
+//       forgotpassword: false,
+//     };
+//   },
+//   methods: {
+//     async login() {
+//       try {
+//         const response = await this.$auth.loginWith("local", {
+//           data: {
+//             email: this.email,
+//             password: this.password,
+//           },
+//         });
+//         this.$emit("CloseLoginEvent");
+//         window.location.reload(true)
+//       } catch ({ response }) {
+//         if (response.data.non_field_errors) {
+//           this.error = response.data.non_field_errors[0];
+//         } else {
+//           this.error = "Por favor no olvides de llenar todos los campos";
+//         }
+//       }
+//     },
+//     Close() {
+//       this.$emit("CloseLoginEvent");
+//     },
+//     Register() {
+//       this.$emit("CloseLoginEvent");
+//       this.$emit("CloseRegisterEvent");
+//     },
+//     forgotPass() {
+//       this.forgotpassword = true;
+//     },
+//     async forgot() {
+//       try {
+//         let response = await this.$axios.$post("api/main/reset-password/", {
+//           email: this.email,
+//         });
+//         this.$toast.success("Te enviamos un correo con toda la info");
+//       } catch (e) {
+//         this.$toast.error(e);
+//       }
+//     },
+//   },
+// };
+</script>
 <template>
   <div class="relative mx-auto w-800 bg-white shadow-md py-8 lg:mt-3 mt-10">
     <button
@@ -161,62 +215,6 @@
     </button>
   </div>
 </template>
-
-<script>
-import alertaErrors from "./AlertaErrors.vue";
-export default {
-  components: { alertaErrors },
-  data() {
-    return {
-      email: "",
-      password: "",
-      error: null,
-      forgotpassword: false,
-    };
-  },
-  methods: {
-    async login() {
-      try {
-        const response = await this.$auth.loginWith("local", {
-          data: {
-            email: this.email,
-            password: this.password,
-          },
-        });
-        this.$emit("CloseLoginEvent");
-        window.location.reload(true)
-      } catch ({ response }) {
-        if (response.data.non_field_errors) {
-          this.error = response.data.non_field_errors[0];
-        } else {
-          this.error = "Por favor no olvides de llenar todos los campos";
-        }
-      }
-    },
-    Close() {
-      this.$emit("CloseLoginEvent");
-    },
-    Register() {
-      this.$emit("CloseLoginEvent");
-      this.$emit("CloseRegisterEvent");
-    },
-    forgotPass() {
-      this.forgotpassword = true;
-    },
-    async forgot() {
-      try {
-        let response = await this.$axios.$post("api/main/reset-password/", {
-          email: this.email,
-        });
-        this.$toast.success("Te enviamos un correo con toda la info");
-      } catch (e) {
-        this.$toast.error(e);
-      }
-    },
-  },
-};
-</script>
-
 <style lang="scss" scoped>
 .close-btn {
   background-image: url("~/static/img/icon/close_icon_blue.png");

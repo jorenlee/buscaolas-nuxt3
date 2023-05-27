@@ -1,4 +1,24 @@
-<template>
+
+<script setup>
+// export default {
+//   props: {
+//     playa_info: Array,
+//   },
+//   data() {
+//     return {
+//       forecasts: [],
+//     };
+//   },
+//   methods: {
+//     // async fetchData() {
+//     //   await this.$axios.$get('/api/main/home')
+//     //     .then(response => {
+//     //       this.forecasts = response.query_altura;
+//     //     });
+//     // }
+//   },
+// };
+</script><template>
   <div class="">
     <div class="premium">
       <div class="cover lg:pt-10 h-96">
@@ -112,28 +132,6 @@
     </div>
   </div>
 </template>
-
-<script>
-export default {
-  props: {
-    playa_info: Array,
-  },
-  data() {
-    return {
-      forecasts: [],
-    };
-  },
-  methods: {
-    // async fetchData() {
-    //   await this.$axios.$get('/api/main/home')
-    //     .then(response => {
-    //       this.forecasts = response.query_altura;
-    //     });
-    // }
-  },
-};
-</script>
-
 <style lang="scss" scoped>
 .blue {
   color: #1c496b;

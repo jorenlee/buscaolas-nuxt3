@@ -1,3 +1,74 @@
+<script setup>
+  // import { mapGetters} from 'vuex';
+  // export default {
+  //   props: ['register', 'registerPremium'],
+  //   data() {
+  //     return {
+  //       login: false,
+  //       toggleMenu: false,
+  //       MenuData: [],
+  //       toggle: false,
+  //       alerts_info: [],
+  //       menuMobile: false
+  //     }
+  //   },
+  //   async fetch(){
+  //     const Data = await this.$axios.$get("/api/main/menu");
+  //     this.MenuData = Data
+  //   },
+  //   methods: {
+  //     async logout() {
+  //       const response = await this.$auth.logout()
+  //       this.$router.push('/')
+  //     },
+  //     OpenLogin () {
+  //       this.login = true
+  //     },
+  //     OpenRegister(){
+  //       this.register = true
+  //     },
+  //     async GetAlert(index){
+  //       if (this.alerts_info[index].user == false){
+  //         let response = await this.$axios.$post("/api/main/playa/email/alertas/", {
+  //         playa_name: this.alerts_info[index].playa_name,
+  //         user_id: this.loggedInUser.id
+  //       });
+  //         this.alerts_info[index].user = true
+  //         return;
+  //       }
+  //       if (this.alerts_info[index].user == true){
+  //         let response = await this.$axios.$delete("/api/main/playa/email/alertas/delete/", { data: {
+  //         playa_name: this.alerts_info[index].playa_name,
+  //         user_id: this.loggedInUser.id
+  //         }
+  //       });
+  //         this.alerts_info[index].user = false
+  //         return;
+  //       }
+  //     }
+  //   },
+  //   computed: {
+  //     ...mapGetters(['isAuthenticated', 'loggedInUser'])
+  //   },
+  //   watch: {
+  //     register: function (newRegister){
+  //       if (!newRegister) {
+  //       this.$emit('CloseRegisterEvent')
+  //       }
+  //     }
+  //   },
+  //   mounted () {
+  //       if (this.isAuthenticated){
+  //         const alertData = this.$axios.$get("/api/main/playa/email/alertas/?id=" + this.loggedInUser.id).then(
+  //           response => {this.alerts_info = response.results}
+  //         )
+  //       }
+  //       if (this.$router.app.context.query.login) {
+  //         this.login = true
+  //       }
+  //   }
+  // }
+</script>
 <template>
   <div class="bg-blue h-10 relative z-50">
     <div class="fixed inset-0 z-20 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full" v-if="login">
@@ -137,79 +208,6 @@
     </div>
   </div>
 </template>
-
-<script>
-  import { mapGetters} from 'vuex';
-  export default {
-    props: ['register', 'registerPremium'],
-    data() {
-      return {
-        login: false,
-        toggleMenu: false,
-        MenuData: [],
-        toggle: false,
-        alerts_info: [],
-        menuMobile: false
-      }
-    },
-    async fetch(){
-      const Data = await this.$axios.$get("/api/main/menu");
-      this.MenuData = Data
-    },
-    methods: {
-      async logout() {
-        const response = await this.$auth.logout()
-        this.$router.push('/')
-      },
-      OpenLogin () {
-        this.login = true
-      },
-      OpenRegister(){
-        this.register = true
-      },
-      async GetAlert(index){
-        if (this.alerts_info[index].user == false){
-          let response = await this.$axios.$post("/api/main/playa/email/alertas/", {
-          playa_name: this.alerts_info[index].playa_name,
-          user_id: this.loggedInUser.id
-        });
-          this.alerts_info[index].user = true
-          return;
-        }
-        if (this.alerts_info[index].user == true){
-          let response = await this.$axios.$delete("/api/main/playa/email/alertas/delete/", { data: {
-          playa_name: this.alerts_info[index].playa_name,
-          user_id: this.loggedInUser.id
-          }
-        });
-          this.alerts_info[index].user = false
-          return;
-        }
-      }
-    },
-    computed: {
-      ...mapGetters(['isAuthenticated', 'loggedInUser'])
-    },
-    watch: {
-      register: function (newRegister){
-        if (!newRegister) {
-        this.$emit('CloseRegisterEvent')
-        }
-      }
-    },
-    mounted () {
-        if (this.isAuthenticated){
-          const alertData = this.$axios.$get("/api/main/playa/email/alertas/?id=" + this.loggedInUser.id).then(
-            response => {this.alerts_info = response.results}
-          )
-        }
-        if (this.$router.app.context.query.login) {
-          this.login = true
-        }
-    }
-  }
-</script>
-
 <style lang="scss" scoped>
   .dot {
     transform: translateX(100%);

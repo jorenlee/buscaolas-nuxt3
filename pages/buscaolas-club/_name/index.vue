@@ -1,3 +1,15 @@
+<script setup>
+  // export default {
+  //   async asyncData({ $axios, params }) {
+  //     const DescuentosData = await $axios.$get("/api/main/socios/" + params.name);
+  //     return { DescuentosData };
+  //   },
+  //   data() {
+  //     return {
+  //     }
+  //   }
+  // }
+</script>
 <template>
   <div>
     <Header/>
@@ -96,20 +108,6 @@
     <Footer/>
   </div>
 </template>
-
-<script>
-  export default {
-    async asyncData({ $axios, params }) {
-      const DescuentosData = await $axios.$get("/api/main/socios/" + params.name);
-      return { DescuentosData };
-    },
-    data() {
-      return {
-      }
-    }
-  }
-</script>
-
 <style lang="scss" scoped>
   .return {
     background: url('~/static/img/icon/Flecha_der_brown.png') no-repeat 10% 50%;

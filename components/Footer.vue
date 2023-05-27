@@ -1,3 +1,23 @@
+<script setup>
+  // export default {
+  //   data(){
+  //     return {
+  //       footer: [],
+  //     }
+  //   },
+  //   mounted() {
+  //     this.fetchData();
+  //   },
+  //   methods: {
+  //     async fetchData() {
+  //       await this.$axios.$get('/api/main/home/settings/')
+  //         .then(response => {
+  //           this.footer = response.footer;
+  //         });
+  //     }
+  //   }
+  // }
+</script>
 <template>
   <div class="footer">
     <div class="relative lg:w-9/12 w-10/12 mx-auto lg:flex pt-10 lg:pb-0 pb-20">
@@ -73,28 +93,6 @@
     </div>
   </div>
 </template>
-
-<script>
-  export default {
-    data(){
-      return {
-        footer: [],
-      }
-    },
-    mounted() {
-      this.fetchData();
-    },
-    methods: {
-      async fetchData() {
-        await this.$axios.$get('/api/main/home/settings/')
-          .then(response => {
-            this.footer = response.footer;
-          });
-      }
-    }
-  }
-</script>
-
 <style lang="scss" scoped>
   a {
     color: #ffffff!important;

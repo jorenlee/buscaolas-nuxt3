@@ -1,3 +1,233 @@
+<script setup>
+// import { mapGetters, mapMutations } from "vuex";
+// import WeekChart from "~/components/WeekChart.vue";
+// export default {
+//   components: { WeekChart },
+//   head() {
+//     return {
+//       title:
+//         "Camaras y reporte de surf en " +
+//         this.$route.params.name +
+//         " - Buscaolas",
+//       meta: [
+//         {
+//           hid: "description",
+//           name: "description",
+//           content:
+//             "Revisa el reporte y las condiciones de la ola en la playa" +
+//             this.$route.params.name,
+//         },
+//         {
+//           hid: "og:title",
+//           name: "og:title",
+//           content:
+//             "Camaras y reporte de surf en " +
+//             this.$route.params.name +
+//             " - Buscaolas",
+//         },
+//         {
+//           hid: "og:description",
+//           name: "og:description",
+//           content:
+//             "Revisa el reporte y las condiciones de la ola en la playa " +
+//             this.$route.params.name,
+//         },
+//         {
+//           hid: "og:image",
+//           name: "og:image",
+//           content: this.PlayaData.playa.imagen,
+//         },
+//         {
+//           hid: "og:url",
+//           name: "og:url",
+//           content: "https://buscaolas.cl/playas/" + this.$route.params.name,
+//         },
+//       ],
+//     };
+//   },
+//   async asyncData({ $axios, params, store }) {
+//     if (params.name) {
+//       const PlayaData = await $axios.$get(
+//         "/api/main/playa/" +
+//           params.name +
+//           "/?premium=" +
+//           store.getters.IsPremium
+//       );
+//       const DataAds = await $axios.$get("/api/main/ads/?type=video");
+//       const RepairData = await $axios.$get(
+//         "/api/main/playa/repair/" + params.name + "/"
+//       );
+//       return { PlayaData, DataAds, RepairData };
+//     }
+//   },
+//   data() {
+//     return {
+//       qualityVideo: "SD",
+//       premiumPopup: false,
+//       offline_url: null,
+//       loaded: false,
+//       type: "category",
+//       toggleClose: false,
+//       popup_title: "Disfruta de Premium",
+//       popup_maintext: "Para que cada sesion valga la pena",
+//       forecast_day: [],
+//       current_rating: {},
+//     };
+//   },
+//   mounted() {
+//     this.loaded = true;
+//     const dataInitial = [];
+//     const data = [];
+//     for (let i = 0; i < this.PlayaData.chart_data_weekly.length; i++) {
+//       dataInitial.push(this.PlayaData.chart_data_weekly[i].data);
+//       for (var j = 0; j < dataInitial[i].length; j++) {
+//         data.push(dataInitial[i][j]);
+//       }
+//     }
+//     if (typeof this.PlayaData.playa.forecast_day[0] === "undefined") {
+//       this.forecast_day = {
+//         alturmax: "No data",
+//         alturamin: "No data",
+//         speedviento: 0,
+//         dirviento: "No data",
+//       };
+//       if (this.current_rating === null) {
+//         this.current_rating = "En revision";
+//       } else {
+//         this.current_rating = { rating: "revision", color: "#B6B6B7" };
+//       }
+//     } else {
+//       this.forecast_day = this.PlayaData.playa.forecast_day[0];
+//       this.current_rating = this.PlayaData.playa.forecast_day[0].current_rating;
+//     }
+//   },
+//   computed: {
+//     ...mapGetters(["isAuthenticated", "loggedInUser", "IsPremium"]),
+//     ShowOffline() {
+//       // var date_now = new Date()
+//       // var time = date_now.getHours()
+//       if (this.PlayaData.playa.urlvideo == "None") {
+//         this.offline_url = require("@/static/images/proximamente.png");
+//         return true;
+//       } else if (this.PlayaData.playa.urlvideo.startsWith("R")) {
+//         this.offline_url = require("@/static/images/reparar.jpg");
+//         return true;
+//         // } else if (time > 20 || time < 6){
+//         //   this.offline_url = "https://media-buscaolas.s3.sa-east-1.amazonaws.com/videos/apagada_poster.jpg"
+//         //   return true;
+//       } else {
+//         return false;
+//       }
+//     },
+//     dateNow() {
+//       return Date.now();
+//     },
+//   },
+//   methods: {
+//     isToggle(day) {
+//       day.isActive = !day.isActive;
+//     },
+//     clickDayBar(e) {
+//       const activePoints = chart2.getElementsAtEventForMode(
+//         e,
+//         "index",
+//         { intersect: true },
+//         false
+//       );
+//       if (Object.keys(activePoints).length !== 0) {
+//         this.days[activePoints[0].index].isActive = true;
+//       }
+//     },
+//     Color(i, totalblue) {
+//       if (i <= totalblue) {
+//         return true;
+//       } else {
+//         return false;
+//       }
+//     },
+//     premium() {
+//       this.$router.push({ path: "/premium" });
+//     },
+//     history() {
+//       if (this.$store.getters.IsPremium) {
+//         //this.$router.push({ path: "/historia/" + this.PlayaData.playa.path });
+//         const formdata = new FormData();  
+//         formdata.append('url1',this.PlayaData.playa.urlvideo_HD.split('/')[3]); 
+//         formdata.append('url2',this.PlayaData.playa.urlvideo2_HD.split('/')[3]);  
+//         formdata.append('urlretorno',this.PlayaData.playa.path);
+//         formdata.append('nombreplaya',this.PlayaData.playa.nombre);
+//         formdata.append('idusuario',this.$store.getters.loggedInUser.id);
+//         fetch('https://puerto.buscaolas.cl/historial/api_get_codigo', {
+//             method: 'POST',
+//             headers:{
+//                 'X-Requested-With': 'XMLHttpRequest', 
+//                 "Access-Control-Allow-Origin":'*',
+//               },
+//             mode: 'no-cors',
+//             body: formdata
+//         })
+//         .then(response => {
+//             window.location.replace("https://puerto.buscaolas.cl/historial/video/"+this.$store.getters.loggedInUser.id);           
+//         })
+//       } else {
+//         this.popup_title = "Historial Exclusivo para premium";
+//         this.popup_maintext =
+//           "Prueba premium por 14 días gratis y revisa hasta 3 días atrás las camaras";
+//         this.premiumPopup = true;
+//       }
+//     },
+//     ChangeVideoSource() {
+//       if (this.$store.getters.IsPremium) {
+//         if (this.qualityVideo == "SD") {
+//           this.qualityVideo = "HD";
+//         } else {
+//           this.qualityVideo = "SD";
+//         }
+//       } else {
+//         this.popup_title = "HD Exclusivo para premium";
+//         this.popup_maintext =
+//           "Prueba premium por 14 días gratis y ve todas las olas en alta definición'";
+//         this.premiumPopup = true;
+//       }
+//     },
+//     direction_calc(dir) {
+//       if (281 <= dir && dir < 303) {
+//         return "WNW";
+//       } else if (303 <= dir && dir < 326) {
+//         return "NW";
+//       } else if (326 <= dir && dir < 348) {
+//         return "NNW";
+//       } else if (258 <= dir && dir < 281) {
+//         return "W";
+//       } else if (236 <= dir && dir < 258) {
+//         return "WSW";
+//       } else if (213 <= dir && dir < 236) {
+//         return "SW";
+//       } else if (191 <= dir && dir < 213) {
+//         return "SSW";
+//       } else if (168 <= dir && dir < 191) {
+//         return "S";
+//       } else if (146 <= dir && dir < 168) {
+//         return "SSE";
+//       } else if (123 <= dir && dir < 146) {
+//         return "SE";
+//       } else if (101 <= dir && dir < 123) {
+//         return "ESE";
+//       } else if (78 <= dir && dir < 101) {
+//         return "E";
+//       } else if (56 <= dir && dir < 78) {
+//         return "ENE";
+//       } else if (33 <= dir && dir < 56) {
+//         return "NE";
+//       } else if (11 <= dir && dir < 33) {
+//         return "NNE";
+//       } else if (348 <= dir && dir < 11) {
+//         return "N";
+//       }
+//     },
+//   },
+// };
+</script>
 <template>
   <!-- separate sub components next push -->
   <div class="overflow-x-hidden">
@@ -2237,239 +2467,6 @@
     <Footer />
   </div>
 </template>
-
-<script>
-import { mapGetters, mapMutations } from "vuex";
-import WeekChart from "~/components/WeekChart.vue";
-
-export default {
-  components: { WeekChart },
-  head() {
-    return {
-      title:
-        "Camaras y reporte de surf en " +
-        this.$route.params.name +
-        " - Buscaolas",
-      meta: [
-        {
-          hid: "description",
-          name: "description",
-          content:
-            "Revisa el reporte y las condiciones de la ola en la playa" +
-            this.$route.params.name,
-        },
-        {
-          hid: "og:title",
-          name: "og:title",
-          content:
-            "Camaras y reporte de surf en " +
-            this.$route.params.name +
-            " - Buscaolas",
-        },
-        {
-          hid: "og:description",
-          name: "og:description",
-          content:
-            "Revisa el reporte y las condiciones de la ola en la playa " +
-            this.$route.params.name,
-        },
-        {
-          hid: "og:image",
-          name: "og:image",
-          content: this.PlayaData.playa.imagen,
-        },
-        {
-          hid: "og:url",
-          name: "og:url",
-          content: "https://buscaolas.cl/playas/" + this.$route.params.name,
-        },
-      ],
-    };
-  },
-  async asyncData({ $axios, params, store }) {
-    if (params.name) {
-      const PlayaData = await $axios.$get(
-        "/api/main/playa/" +
-          params.name +
-          "/?premium=" +
-          store.getters.IsPremium
-      );
-      const DataAds = await $axios.$get("/api/main/ads/?type=video");
-      const RepairData = await $axios.$get(
-        "/api/main/playa/repair/" + params.name + "/"
-      );
-      return { PlayaData, DataAds, RepairData };
-    }
-  },
-  data() {
-    return {
-      qualityVideo: "SD",
-      premiumPopup: false,
-      offline_url: null,
-      loaded: false,
-      type: "category",
-      toggleClose: false,
-      popup_title: "Disfruta de Premium",
-      popup_maintext: "Para que cada sesion valga la pena",
-      forecast_day: [],
-      current_rating: {},
-    };
-  },
-  mounted() {
-    this.loaded = true;
-    const dataInitial = [];
-    const data = [];
-    for (let i = 0; i < this.PlayaData.chart_data_weekly.length; i++) {
-      dataInitial.push(this.PlayaData.chart_data_weekly[i].data);
-      for (var j = 0; j < dataInitial[i].length; j++) {
-        data.push(dataInitial[i][j]);
-      }
-    }
-    if (typeof this.PlayaData.playa.forecast_day[0] === "undefined") {
-      this.forecast_day = {
-        alturmax: "No data",
-        alturamin: "No data",
-        speedviento: 0,
-        dirviento: "No data",
-      };
-      if (this.current_rating === null) {
-        this.current_rating = "En revision";
-      } else {
-        this.current_rating = { rating: "revision", color: "#B6B6B7" };
-      }
-    } else {
-      this.forecast_day = this.PlayaData.playa.forecast_day[0];
-      this.current_rating = this.PlayaData.playa.forecast_day[0].current_rating;
-    }
-  },
-  computed: {
-    ...mapGetters(["isAuthenticated", "loggedInUser", "IsPremium"]),
-    ShowOffline() {
-      // var date_now = new Date()
-      // var time = date_now.getHours()
-      if (this.PlayaData.playa.urlvideo == "None") {
-        this.offline_url = require("@/static/images/proximamente.png");
-        return true;
-      } else if (this.PlayaData.playa.urlvideo.startsWith("R")) {
-        this.offline_url = require("@/static/images/reparar.jpg");
-        return true;
-        // } else if (time > 20 || time < 6){
-        //   this.offline_url = "https://media-buscaolas.s3.sa-east-1.amazonaws.com/videos/apagada_poster.jpg"
-        //   return true;
-      } else {
-        return false;
-      }
-    },
-    dateNow() {
-      return Date.now();
-    },
-  },
-  methods: {
-    isToggle(day) {
-      day.isActive = !day.isActive;
-    },
-    clickDayBar(e) {
-      const activePoints = chart2.getElementsAtEventForMode(
-        e,
-        "index",
-        { intersect: true },
-        false
-      );
-      if (Object.keys(activePoints).length !== 0) {
-        this.days[activePoints[0].index].isActive = true;
-      }
-    },
-    Color(i, totalblue) {
-      if (i <= totalblue) {
-        return true;
-      } else {
-        return false;
-      }
-    },
-    premium() {
-      this.$router.push({ path: "/premium" });
-    },
-    history() {
-      if (this.$store.getters.IsPremium) {
-        //this.$router.push({ path: "/historia/" + this.PlayaData.playa.path });
-        const formdata = new FormData();  
-        formdata.append('url1',this.PlayaData.playa.urlvideo_HD.split('/')[3]); 
-        formdata.append('url2',this.PlayaData.playa.urlvideo2_HD.split('/')[3]);  
-        formdata.append('urlretorno',this.PlayaData.playa.path);
-        formdata.append('nombreplaya',this.PlayaData.playa.nombre);
-        formdata.append('idusuario',this.$store.getters.loggedInUser.id);
-        fetch('https://puerto.buscaolas.cl/historial/api_get_codigo', {
-            method: 'POST',
-            headers:{
-                'X-Requested-With': 'XMLHttpRequest', 
-                "Access-Control-Allow-Origin":'*',
-              },
-            mode: 'no-cors',
-            body: formdata
-        })
-        .then(response => {
-            window.location.replace("https://puerto.buscaolas.cl/historial/video/"+this.$store.getters.loggedInUser.id);           
-        })
-      } else {
-        this.popup_title = "Historial Exclusivo para premium";
-        this.popup_maintext =
-          "Prueba premium por 14 días gratis y revisa hasta 3 días atrás las camaras";
-        this.premiumPopup = true;
-      }
-    },
-    ChangeVideoSource() {
-      if (this.$store.getters.IsPremium) {
-        if (this.qualityVideo == "SD") {
-          this.qualityVideo = "HD";
-        } else {
-          this.qualityVideo = "SD";
-        }
-      } else {
-        this.popup_title = "HD Exclusivo para premium";
-        this.popup_maintext =
-          "Prueba premium por 14 días gratis y ve todas las olas en alta definición'";
-        this.premiumPopup = true;
-      }
-    },
-    direction_calc(dir) {
-      if (281 <= dir && dir < 303) {
-        return "WNW";
-      } else if (303 <= dir && dir < 326) {
-        return "NW";
-      } else if (326 <= dir && dir < 348) {
-        return "NNW";
-      } else if (258 <= dir && dir < 281) {
-        return "W";
-      } else if (236 <= dir && dir < 258) {
-        return "WSW";
-      } else if (213 <= dir && dir < 236) {
-        return "SW";
-      } else if (191 <= dir && dir < 213) {
-        return "SSW";
-      } else if (168 <= dir && dir < 191) {
-        return "S";
-      } else if (146 <= dir && dir < 168) {
-        return "SSE";
-      } else if (123 <= dir && dir < 146) {
-        return "SE";
-      } else if (101 <= dir && dir < 123) {
-        return "ESE";
-      } else if (78 <= dir && dir < 101) {
-        return "E";
-      } else if (56 <= dir && dir < 78) {
-        return "ENE";
-      } else if (33 <= dir && dir < 56) {
-        return "NE";
-      } else if (11 <= dir && dir < 33) {
-        return "NNE";
-      } else if (348 <= dir && dir < 11) {
-        return "N";
-      }
-    },
-  },
-};
-</script>
-
 <style lang="scss" scoped>
 .font-poppins {
   font-family: Poppins;

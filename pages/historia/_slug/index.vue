@@ -1,3 +1,67 @@
+<script setup>
+// import { mapGetters} from 'vuex';
+// export default {
+//   middleware: 'auth',
+//   data() {
+//     return {
+//       url: null,
+//       filterBy: null,
+//       button: null,
+//       DataFiltered: null
+//     }
+//   },
+//   async asyncData({ $axios, params}) {
+//     if (params.slug) {
+//       const VideosData  = await $axios.$get(
+//         "/api/main/playa/history/" +
+//           params.slug
+//       );
+//     return { VideosData };
+//     }
+//   },
+//   methods: {
+//     // PlayUrl(url){
+//     //   this.url = url
+//     //   window.scrollTo(0,0);
+//     // },
+//     // FilterAM(buttonclikde){
+//     //    if (buttonclikde == "AM") {
+//     //      this.button = "AM"
+//     //    } else {
+//     //      this.button = "PM"
+//     //    }
+//     // }
+//   },
+//   computed: {
+//       ...mapGetters(['isAuthenticated', 'loggedInUser', 'IsPremium']),
+//         filterData(){
+//         if(this.filterBy){
+//         this.DataFiltered = this.VideosData.videos.filter((list) => {
+//           return list.date.match(this.filterBy)
+//         });
+//           return this.DataFiltered 
+//         } else {
+//           return this.VideosData.videos
+//         }
+//       }
+//     },
+//   mounted() {  
+//   //   if ((window.screen.width * window.devicePixelRatio) < 1023){
+//   //     let controles = document.getElementsByClassName('vjs-control-bar');
+//   //     for (let i = 0; i < controles.length; i++) {
+//   //       controles[i].style.opacity = 1;
+//   //       controles[i].style.visibility = 'visible';
+//   //       controles[i].style.pointerEvents = 'fill';
+//   //     }
+//   //   }
+//   //   let audios = document.getElementsByClassName('vjs-volume-panel');
+//   //   for (let i = 0; i < audios.length; i++) {
+//   //     audios[i].style.display = 'none';
+//   //   }
+//   }
+   
+// };
+</script>
 <template>
   <div>
     <Header />
@@ -101,72 +165,6 @@
     <Footer />
   </div>
 </template>
-
-<script>
-import { mapGetters} from 'vuex';
-export default {
-  middleware: 'auth',
-  data() {
-    return {
-      url: null,
-      filterBy: null,
-      button: null,
-      DataFiltered: null
-    }
-  },
-  async asyncData({ $axios, params}) {
-    if (params.slug) {
-      const VideosData  = await $axios.$get(
-        "/api/main/playa/history/" +
-          params.slug
-      );
-    return { VideosData };
-    }
-  },
-  methods: {
-    // PlayUrl(url){
-    //   this.url = url
-    //   window.scrollTo(0,0);
-    // },
-    // FilterAM(buttonclikde){
-    //    if (buttonclikde == "AM") {
-    //      this.button = "AM"
-    //    } else {
-    //      this.button = "PM"
-    //    }
-    // }
-  },
-  computed: {
-      ...mapGetters(['isAuthenticated', 'loggedInUser', 'IsPremium']),
-        filterData(){
-        if(this.filterBy){
-        this.DataFiltered = this.VideosData.videos.filter((list) => {
-          return list.date.match(this.filterBy)
-        });
-          return this.DataFiltered 
-        } else {
-          return this.VideosData.videos
-        }
-      }
-    },
-  mounted() {  
-  //   if ((window.screen.width * window.devicePixelRatio) < 1023){
-  //     let controles = document.getElementsByClassName('vjs-control-bar');
-  //     for (let i = 0; i < controles.length; i++) {
-  //       controles[i].style.opacity = 1;
-  //       controles[i].style.visibility = 'visible';
-  //       controles[i].style.pointerEvents = 'fill';
-  //     }
-  //   }
-  //   let audios = document.getElementsByClassName('vjs-volume-panel');
-  //   for (let i = 0; i < audios.length; i++) {
-  //     audios[i].style.display = 'none';
-  //   }
-  }
-   
-};
-</script>
-
 <style lang="scss" scoped>
 .gradient-color {
   background: linear-gradient(163.41deg, #1c496b 0%, #00a99d 100%);

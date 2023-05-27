@@ -1,3 +1,27 @@
+<script setup>
+// import Swiper from 'swiper/swiper-bundle.min';
+// import 'swiper/swiper-bundle.min.css';
+export default {
+  props: {
+    cameras_forecast: Array,
+  },
+  data() {
+    return {
+      mobile: null,
+    };
+  },
+  async mounted() {
+    // new Swiper('.Forecast', {
+    //   loop: true,
+    //   loopFillGroupWithBlank: true,
+    //   navigation: {
+    //     nextEl: '.swiper-button-next',
+    //     prevEl: '.swiper-button-prev',
+    //   }
+    // })
+  },
+};
+</script>
 <template>
   <div class="lg:w-9/12 w-11/12 mx-auto mb-10">
     <div
@@ -221,32 +245,6 @@
     </div>
   </div>
 </template>
-
-<script>
-// import Swiper from 'swiper/swiper-bundle.min';
-// import 'swiper/swiper-bundle.min.css';
-export default {
-  props: {
-    cameras_forecast: Array,
-  },
-  data() {
-    return {
-      mobile: null,
-    };
-  },
-  async mounted() {
-    // new Swiper('.Forecast', {
-    //   loop: true,
-    //   loopFillGroupWithBlank: true,
-    //   navigation: {
-    //     nextEl: '.swiper-button-next',
-    //     prevEl: '.swiper-button-prev',
-    //   }
-    // })
-  },
-};
-</script>
-
 <style lang="scss" scoped>
 .blue {
   color: #1c496b;

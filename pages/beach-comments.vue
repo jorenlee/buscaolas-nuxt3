@@ -1,3 +1,28 @@
+<script setup>
+  // export default {
+  //   data() {
+  //     return {
+  //       lists: [
+  //         {
+  //           id:1,
+  //         },
+  //         {
+  //           id:2,
+  //         },
+  //         {
+  //           id:3,
+  //         },
+  //         {
+  //           id:4,
+  //         },
+  //         {
+  //           id:5,
+  //         }
+  //       ]
+  //     }
+  //   }
+  // }
+</script>
 <template>
   <div>
     <Header/>
@@ -103,33 +128,6 @@
     <Footer/>
   </div>
 </template>
-
-<script>
-  export default {
-    data() {
-      return {
-        lists: [
-          {
-            id:1,
-          },
-          {
-            id:2,
-          },
-          {
-            id:3,
-          },
-          {
-            id:4,
-          },
-          {
-            id:5,
-          }
-        ]
-      }
-    }
-  }
-</script>
-
 <style lang="scss" scoped>
   .return {
     background: url('~/static/img/icon/Flecha_der_brown.png') no-repeat 10% 50%;

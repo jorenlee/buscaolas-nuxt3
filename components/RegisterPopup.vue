@@ -1,3 +1,108 @@
+<script setup>
+// import { mapGetters } from "vuex";
+// export default {
+//   data() {
+//     return {
+//       first_name: "",
+//       last_name: "",
+//       email: "",
+//       password1: "",
+//       password2: "",
+//       telefono: "",
+//       error: null,
+//       PlanID: 3,
+//       RegisterForm: true,
+//       ValidatePhone: false,
+//       ValidatePhoneAlertErrorToast: false,
+//       CorrectionFormatAlertErrorToast: false,
+//       CambiaTelefonoElements: false,
+//       phone_number: "",
+//       cambia_telefono: null,
+//       region_select: null,
+//       Regions: null,
+//       user_id: null,
+//       code: null,
+//     };
+//   },
+//   async fetch() {
+//     const DataRegion = await this.$axios.$get("/api/main/user/regiones/").then((res) => {
+//       this.Regions = res;
+//     });
+//   },
+//   computed: {
+//     ...mapGetters(["isAuthenticated", "loggedInUser", "IsPremium"]),
+//   },
+//   methods: {
+//     registerIni() {
+//       this.RegisterForm = false;
+//       this.$emit("CloseRegisterEvent");
+//       this.$emit("OpenLogin");
+//     },
+//     async validated() {
+//       try {
+//         let code_response = await this.$axios.$post("/api/main/check-code/", {
+//           user_id: this.user_id,
+//           code: this.code,
+//         });
+//         if (code_response.success == true) {
+//           const response_login = await this.$auth.loginWith("local", {
+//             data: {
+//               email: this.email.trim(),
+//               password: this.password1,
+//             },
+//           });
+//           this.$emit("CloseRegisterEvent");
+//         } else {
+//           this.ValidatePhoneAlertErrorToast = true;
+//         }
+//       } catch (e) {
+//         this.$toast.error(e.response.data.detail);
+//       }
+//     },
+//     async cambiarTelefono() {
+//       try {
+//         let response = await this.$axios.$put(
+//           "/api/main/update-phone/" + this.user_id
+//         );
+//         this.$toast.success("El cambiar telefono");
+//         this.ValidatePhone = true;
+//         this.CambiaTelefonoElements = false;
+//       } catch (e) {
+//         this.$toast.error(e);
+//       }
+//     },
+//     async register() {
+//       try {
+//         let response_register = await this.$axios.$post("/api/main/auth/register/", {
+//           first_name: this.first_name,
+//           last_name: this.last_name,
+//           email: this.email.trim(),
+//           password: this.password1,
+//           password2: this.password2,
+//           phone: this.telefono,
+//           region: this.region_select,
+//         });
+//         this.user_id = response_register.id;
+//         this.RegisterForm = false;
+//         this.ValidatePhone = true;
+//       } catch (e) {
+//         if (!this.user_id) {
+//           for (var i in e.response.data) {
+//             for (var j in e.response.data[i]) {
+//               this.$toast.error(i + ": " + e.response.data[i][j]);
+//             }
+//           }
+//         } else {
+//           this.$toast.error(e.response.status + ": algo paso, intentalo de nuevo");
+//         }
+//       }
+//     },
+//     Close() {
+//       this.$emit("CloseRegisterEvent");
+//     },
+//   },
+// };
+</script>
 <template>
   <div class="mx-auto w-800 bg-gradient mt-10">
     <div class="relative">
@@ -201,111 +306,7 @@
   </div>
 </template>
 
-<script>
-import { mapGetters } from "vuex";
-export default {
-  data() {
-    return {
-      first_name: "",
-      last_name: "",
-      email: "",
-      password1: "",
-      password2: "",
-      telefono: "",
-      error: null,
-      PlanID: 3,
-      RegisterForm: true,
-      ValidatePhone: false,
-      ValidatePhoneAlertErrorToast: false,
-      CorrectionFormatAlertErrorToast: false,
-      CambiaTelefonoElements: false,
-      phone_number: "",
-      cambia_telefono: null,
-      region_select: null,
-      Regions: null,
-      user_id: null,
-      code: null,
-    };
-  },
-  async fetch() {
-    const DataRegion = await this.$axios.$get("/api/main/user/regiones/").then((res) => {
-      this.Regions = res;
-    });
-  },
-  computed: {
-    ...mapGetters(["isAuthenticated", "loggedInUser", "IsPremium"]),
-  },
-  methods: {
-    registerIni() {
-      this.RegisterForm = false;
-      this.$emit("CloseRegisterEvent");
-      this.$emit("OpenLogin");
-    },
-    async validated() {
-      try {
-        let code_response = await this.$axios.$post("/api/main/check-code/", {
-          user_id: this.user_id,
-          code: this.code,
-        });
-        if (code_response.success == true) {
-          const response_login = await this.$auth.loginWith("local", {
-            data: {
-              email: this.email.trim(),
-              password: this.password1,
-            },
-          });
-          this.$emit("CloseRegisterEvent");
-        } else {
-          this.ValidatePhoneAlertErrorToast = true;
-        }
-      } catch (e) {
-        this.$toast.error(e.response.data.detail);
-      }
-    },
-    async cambiarTelefono() {
-      try {
-        let response = await this.$axios.$put(
-          "/api/main/update-phone/" + this.user_id
-        );
-        this.$toast.success("El cambiar telefono");
-        this.ValidatePhone = true;
-        this.CambiaTelefonoElements = false;
-      } catch (e) {
-        this.$toast.error(e);
-      }
-    },
-    async register() {
-      try {
-        let response_register = await this.$axios.$post("/api/main/auth/register/", {
-          first_name: this.first_name,
-          last_name: this.last_name,
-          email: this.email.trim(),
-          password: this.password1,
-          password2: this.password2,
-          phone: this.telefono,
-          region: this.region_select,
-        });
-        this.user_id = response_register.id;
-        this.RegisterForm = false;
-        this.ValidatePhone = true;
-      } catch (e) {
-        if (!this.user_id) {
-          for (var i in e.response.data) {
-            for (var j in e.response.data[i]) {
-              this.$toast.error(i + ": " + e.response.data[i][j]);
-            }
-          }
-        } else {
-          this.$toast.error(e.response.status + ": algo paso, intentalo de nuevo");
-        }
-      }
-    },
-    Close() {
-      this.$emit("CloseRegisterEvent");
-    },
-  },
-};
-</script>
+
 
 <style lang="scss" scoped>
 option {

@@ -1,3 +1,37 @@
+<script setup>
+//   export default {
+//     data() {
+//       return {
+//       }
+//     }
+//   }
+// </script>
+
+// <style lang="scss" scoped>
+//   .join-the-club {
+//     background: linear-gradient(163.41deg, #1C496B 0%, #00A99D 100%);
+//   }
+//   .text {
+//     font-size: 25px;
+//     min-width: 600px;
+//     height: 160px;
+//   }
+//   .benefits {
+//     background: #FFA800;
+//     width: 200px;
+//     height: 40px;
+//     font-size: 15px;
+//     letter-spacing: 0.25em;
+//   }
+//   @media only screen and (max-width: 1023px) {
+//     .text {
+//       width: 100%;
+//       height: 50px;
+//       min-width: 320px;
+//       text-align: center;
+//     }
+  // }
+</style>
 <template>
   <div class="join-the-club pt-20 pb-14">
     <div class="lg:w-9/12 mx-auto lg:flex">
@@ -24,38 +58,3 @@
   </div>
   </div>
 </template>
-
-<script>
-  export default {
-    data() {
-      return {
-      }
-    }
-  }
-</script>
-
-<style lang="scss" scoped>
-  .join-the-club {
-    background: linear-gradient(163.41deg, #1C496B 0%, #00A99D 100%);
-  }
-  .text {
-    font-size: 25px;
-    min-width: 600px;
-    height: 160px;
-  }
-  .benefits {
-    background: #FFA800;
-    width: 200px;
-    height: 40px;
-    font-size: 15px;
-    letter-spacing: 0.25em;
-  }
-  @media only screen and (max-width: 1023px) {
-    .text {
-      width: 100%;
-      height: 50px;
-      min-width: 320px;
-      text-align: center;
-    }
-  }
-</style>

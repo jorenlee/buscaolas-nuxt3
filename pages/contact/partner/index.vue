@@ -1,3 +1,6 @@
+<script setup>
+  // export default {}
+</script>
 <template>
   <div>
     <Header/>
@@ -43,11 +46,6 @@
     <Footer/>
   </div>
 </template>
-
-<script>
-  export default {}
-</script>
-
 <style lang="scss" scoped>
   .bg-gray {
     background: #E5E5E5;
